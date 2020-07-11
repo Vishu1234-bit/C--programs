@@ -1,0 +1,5 @@
+def check_anagram(a,b):
+  return sorted(a)==sorted(b)
+a="restful"
+b=input()
+check_anagram(a,b)
