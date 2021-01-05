@@ -1,7 +1,7 @@
 #include <stdio.h>  
 void cellcompete(int arr[],int days){
      int retarr[8];
-	 for(int j=0;j<days;j++){
+	for(int j=0;j<days;j++){
 	   retarr[-1] = 0;
 	   retarr[0] = 0;
 	   for(int i=1;i<7;i++){
