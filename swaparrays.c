@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int main(){
 int n,a[10],b[10],c[10];
