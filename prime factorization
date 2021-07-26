@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include<math.h>
+int isPrime(int N);
+int main()//798994  = 79
+{
+    long long int N, check_factor;
+    scanf("%lld",&N);
+    if(isPrime(N)==1){
+        printf("%lld ",N);
+        return 0;
+    }
+    else{
+        for(check_factor=2;check_factor<N;check_factor++){
+            if(N%check_factor==0){
+                while(N%check_factor==0){
+                    printf("%lld ",check_factor);
+                    N = N/check_factor;
+                }
+                if(isPrime(N)==1){
+                    printf("%lld ",N);
+                    break;
+                }
+            }
+        }
+    }
+    
+}
+int isPrime(int N){
+    if(N == 2|| N == 3){
+        return 1;
+    }
+    else if(N==1||N%2==0){
+        return 0;
+    }
+    else if(N%6==1 || N%6==5){
+        int till = sqrt(N);
+        for(int cf =3;cf<=till;cf++){
+            if(N%cf==0){
+                return 0;
+            }
+        }
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
