@@ -1,0 +1,22 @@
+int main()//798994  = 79
+{
+    long long int N;
+    scanf("%lld",&N);
+    long long int even_digit = 0,odd_digit=0,even_place = 1,odd_place = 1,digit;
+    while(N){
+        digit = N%10;
+        if(digit%2==0){
+            even_digit = even_digit+digit*even_place;
+            even_place = even_place*10;
+        }
+        else{
+            odd_digit = odd_digit+digit*odd_place;
+            odd_place=odd_place*10;
+        }
+        N=N/10;
+    }
+        odd_digit = odd_digit*even_place+even_digit;
+        printf("%lld",odd_digit);
+    
+    
+}
