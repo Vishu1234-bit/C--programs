@@ -1,0 +1,19 @@
+int main()
+{
+   int num1,num2,base,digit1,digit2,carry=0,ans=0,place=1,sum,new_digit;
+   scanf("%d %d\n%d",&num1,&num2,&base);
+   while(num1>0 &&num2>0){
+       digit1 = num1%10;
+       digit2 = num2%10;
+       sum = digit1+digit2+carry;
+       carry = sum/base;
+       new_digit = sum%base;
+       ans = ans+new_digit*place;
+       place=place*10;
+       num1 = num1/10;
+       num2=num2/10;
+   }
+   if(carry>0)
+      ans = ans+carry*place;
+   printf("%d",ans);
+}
