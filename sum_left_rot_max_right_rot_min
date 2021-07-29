@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<limits.h>
+int main()
+{
+    //345678   456783   567834   678345   783456    834567  345678
+    //345678   834567   783456   678345   567834    456783  345678
+    int max,min,original_num,input,power=1,sum;
+    max =INT_MIN;
+    min = INT_MAX;
+    scanf("%d",&input);
+    original_num = input;
+    while(input/power>0){
+        power = power*10;
+    }
+    power = power/10;
+    while(1){
+        input = (input%10)*power + input/10;
+        if(input>max && input>power){
+            max=input;
+        }
+        if(input<min && input>power){
+            min=input;
+        }
+        if(input==original_num){
+            break;
+        }
+    }
+    sum = max+min;
+    printf("%d %d %d",max,min,sum);
+    
+}
