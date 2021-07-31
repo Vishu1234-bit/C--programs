@@ -1,0 +1,19 @@
+#include <stdio.h>
+long long int any_base_to_decimal(int input,int from_base);
+int main()
+{
+    long long int input;
+    int from_base;
+    scanf("%lld %d",&input,&from_base);
+    printf("%lld",any_base_to_decimal(input,from_base));
+}
+long long int any_base_to_decimal(int input,int from_base){
+    long long int place=1,res=0,digit;
+    while(input){
+        digit = input%10;
+        res = res+digit*place;
+        place = place*from_base;
+        input = input/10;
+    }
+    return res;
+}
