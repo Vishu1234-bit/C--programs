@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+   int n;
+   scanf("%d",&n);
+   int one,two,five;
+   five = (n-4)/5;
+   if((n-(five*5))%2==0){
+       one =2;
+   }
+   else{
+       one=1;
+   }
+   two = (n-(five*5)-one)/2;
+   printf("%d %d %d %d",(one+two+five),five,two,one);
+}
