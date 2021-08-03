@@ -1,0 +1,19 @@
+#include <stdio.h>
+long long int base_converter(long long int input,int from_base,int to_base);
+int main()
+{
+    long long int input;
+    int from_base,to_base;
+    scanf("%lld %d %d",&input,&from_base,&to_base);
+    printf("%lld",base_converter(input,from_base,to_base));
+}
+long long int base_converter(long long int input,int from_base,int to_base){
+    long long int place=1,digit, res=0;
+    while(input){
+      digit = input%to_base;
+      res = res +place*digit;
+      place = place*from_base;
+      input=input/to_base;
+}
+return res;
+}
