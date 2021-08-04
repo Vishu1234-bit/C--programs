@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <math.h>
+int isPrime(int num);
+int main()
+{
+  int power=1,input,digit,original_num,res_flag=1;
+  scanf("%d",&input);
+  original_num=input;
+  while(input/power){
+      digit = (input/power)%10;
+      if(digit%2==0||digit==5){
+          res_flag = 0 ;
+          break;
+      }
+      power = power*10;
+  }
+  power = power/10;
+  if(res_flag==0)
+     printf("not a circular prime");
+  else{
+      while(1){
+          input = (input%10)*power + input/10;
+          if(isPrime(input)==0)
+              break;
+          if(input == original_num)
+             break;
+      }
+      if(input==original_num)
+      printf("Circular Prime");
+      else
+      printf("not a circular prime");
+  }
+}
+int isPrime(int num){
+    if(num==1||num%2==0)
+    return 0;
+    else if(num==2 || num==3)
+    return 1;
+    else if(num%6==1||num%6==5){
+        int till = sqrt(num);
+        for(int i = 3;i<=till;i+=2){
+            if(num%i==0)
+               return 0;
+        }
+        return 1;
+    }
+    else
+    return 0;
+}
