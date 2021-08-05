@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int input,factors[10000],count;
+    scanf("%d",&input);
+    if(input<10)
+    printf("%d",input+10);
+    else{
+    for(int factor = 9;factor>1;factor--){
+        while(input%factor==0){
+            input = input/factor;
+            factors[count]=factor;
+            count++;
+        }
+    }
+    if(input>10){
+        printf("Not Possible");
+    }
+    else{
+    for(int res = count-1;res>=0;res--){
+        printf("%d",factors[res]);
+    }
+    }
+    }
+}
