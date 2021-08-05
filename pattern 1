@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    for(int col_ctr=0;col_ctr<n;col_ctr++){
+        for(int star_ctr=1;star_ctr<=(n-col_ctr);star_ctr++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+}
