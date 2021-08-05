@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    //76895432
+    //LP:10000000//RP:1 //9 5 36859472
+    int input,left_power=1,right_power=1,left_digit,right_digit;
+    scanf("%d",&input);
+    while(input/left_power>0){
+        left_power = left_power*10;
+    }
+    left_power=left_power/10;
+    while(1){
+        while(left_power>right_power){
+            left_digit = (input/left_power)%10;
+            if(left_digit%2==1)
+            break;
+            left_power = left_power/10;
+        }
+        while(left_power>right_power){
+            right_digit = (input/right_power)%10;
+            if(right_digit%2==1)
+            break;
+            right_power = right_power*10;
+        }
+        if(left_power<=right_power)
+        break;
+        input = input-left_digit*left_power;
+        input = input+right_digit*left_power;
+        input = input-right_digit*right_power;
+        input = input+left_digit*right_power;
+        left_power=left_power/10;
+        right_power = right_power*10;
+    }
+    printf("%d",input);
+}
