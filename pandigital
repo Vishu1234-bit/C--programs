@@ -1,0 +1,28 @@
+#include <stdio.h>
+int power(int data,int val);
+int main()
+{
+    long long int input,ans=0;
+    int digit;
+    scanf("%lld",&input);
+    while(input){
+        digit = input%10;
+        if((ans/power(10,digit))%10==1)
+        break;
+        ans = ans+power(10,digit);
+        //printf("%lld\n",ans);
+        input=input/10;
+    }
+    //printf("%lld",ans);
+    if(ans==1111111110)
+    printf("Pandigital");
+    else
+    printf("Not A Pandigital");
+}
+int power(int data,int val){
+    int result=1;
+    for(int i=1;i<=val;i++){
+        result = result*10;
+    }
+    return result;
+}
