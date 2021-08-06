@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    int input;
+    scanf("%d",&input);
+    for(int ctr = 1;ctr<=input;ctr++){
+        for(int star_ctr = 1;star_ctr<=ctr;star_ctr++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
